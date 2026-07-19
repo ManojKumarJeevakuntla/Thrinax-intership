@@ -1,0 +1,64 @@
+/* CSS Variables for Light/Dark Mode */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222;
+  --accent-color: #0078d7;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --accent-color: #00bfff;
+}
+
+/* Base Styles */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Flexbox for Projects */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project {
+  flex: 1 1 30%;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .projects {
+    flex-direction: column;
+  }
+}
+
+/* Header & Footer */
+header, footer {
+  background-color: var(--accent-color);
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
